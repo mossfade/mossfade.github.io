@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MOSSFADE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            background: black;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: black;
+        }
+
+        /* You can add media queries here for responsiveness if needed */
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div
+            style="width: 1440px; background: white; overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: center; display: inline-flex">
+            <div
+                style="align-self: stretch; background: black; flex-direction: column; justify-content: flex-start; align-items: center; gap: 16px; display: flex">
+                <div
+                    style="width: 1440px; padding-top: 48px; padding-bottom: 48px; background: black; flex-direction: column; justify-content: flex-start; align-items: center; gap: 8px; display: flex">
+                    <div
+                        style="width: 1280px; height: 112px; overflow: hidden; border-radius: 24px; outline: 2px #282828 solid; outline-offset: -2px; display: flex; align-items: center; background: black;">
+
+                        <!-- Logo Section -->
+                        <div
+                            style="width: 224px; height: 112px; padding: 0 80px; border-right: 2px #0F0C00 solid; display: flex; align-items: center; justify-content: center;">
+                            <img src="images/logo.png"
+                                style="max-height: 100%; max-width: 100%; object-fit: contain;" />
+                        </div>
+
+                        <!-- Navigation Buttons -->
+                        <div style="flex: 1; display: flex; justify-content: flex-end; padding-right: 80px; gap: 32px;">
+                            <a href="team.html"
+                                style="background: none; border: none; color: white; font-size: 20px; font-family: Inter; font-weight: 600; cursor: pointer; text-decoration: none;">
+                                Team
+                            </a>
+                            <a href="#contact"
+                                style="background: none; border: none; color: white; font-size: 20px; font-family: Inter; font-weight: 600; cursor: pointer; text-decoration: none;">
+                                Contact
+                            </a>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div
+                    style="width: 1440px; padding-bottom: 40px; flex-direction: column; justify-content: center; align-items: center; gap: 72px; display: flex">
+                    <div
+                        style="width: 1126px; text-align: center; color: #B4FF81; font-size: 140px; font-family: Inter; font-weight: 600; line-height: 144px; word-wrap: break-word">
+                        MOSSFADE</div>
+                    <div id="mossfade-canvas" style="width: 1200px; height: 400px; position: relative;"></div>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+                    <script src="mold-sketch.js"></script>
+
+                </div>
+            </div>
+            <div
+                style="align-self: stretch; padding-left: 80px; padding-right: 80px; padding-top: 40px; padding-bottom: 40px; background: black; flex-direction: column; justify-content: center; align-items: center; gap: 32px; display: flex">
+                <div
+                    style="width: 1280px; justify-content: flex-end; align-items: center; gap: 64px; display: inline-flex">
+                    <div
+                        style="width: 1203px; text-align: center; justify-content: flex-end; display: flex; flex-direction: column; color: white; font-size: 36px; font-family: Inter; font-weight: 500; line-height: 40px; word-wrap: break-word">
+                        A multidisciplinary collective at the intersection of psychology, art, and design. We navigate
+                        unseen
+                        currents... where thought, form, and feeling converge into elusive patterns.<br /><br />"In
+                        nature,
+                        nothing exists alone." - Rachel Carson</div>
+                    <div
+                        style="flex: 1 1 0; height: 280px; padding-top: 32px; padding-bottom: 64px; background: rgba(255, 255, 255, 0)">
+                    </div>
+                </div>
+            </div>
+            <div
+                style="align-self: stretch; padding-bottom: 80px; background: black; flex-direction: column; justify-content: flex-start; align-items: center; gap: 16px; display: flex">
+                <div
+                    style="width: 1440px; padding-top: 24px; padding-bottom: 24px; background: black; flex-direction: column; justify-content: flex-start; align-items: center; gap: 8px; display: flex">
+                    <div style="width: 1280px; justify-content: flex-start; align-items: center; display: inline-flex">
+                        <div
+                            style="flex: 1 1 0; overflow: hidden; justify-content: flex-start; align-items: center; gap: 8px; display: flex">
+
+                            <div
+                                style="color: white; font-size: 22px; font-family: Inter; font-weight: 600; line-height: 38px; word-wrap: break-word">
+                                Our Practices</div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    style="width: 1280px; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
+                    <div
+                        style="align-self: stretch; padding-top: 32px; padding-bottom: 32px; border-bottom: 1px #282828 solid; justify-content: space-between; align-items: center; display: inline-flex">
+                        <div style="justify-content: flex-start; align-items: center; gap: 32px; display: flex">
+                            <div
+                                style="width: 150px; height: 40px; position: relative; overflow: hidden; border-radius: 18px; background-image: url(https://placehold.co/150x40)">
+                                <img style="width: 154.95px; height: 236px; left: 0px; top: -75px; position: absolute"
+                                    src="images/p1.png" />
+                            </div>
+                            <div
+                                style="color: white; font-size: 34px; font-family: Inter; font-weight: 600; line-height: 40px; word-wrap: break-word">
+                                Experience & Interface Design</div>
+                        </div>
+                        <div style="width: 40px; height: 40px; position: relative"></div>
+                    </div>
+                    <div
+                        style="align-self: stretch; padding-top: 32px; padding-bottom: 32px; border-bottom: 1px #282828 solid; justify-content: space-between; align-items: center; display: inline-flex">
+                        <div style="justify-content: flex-start; align-items: center; gap: 32px; display: flex">
+                            <div
+                                style="width: 150px; height: 40px; position: relative; overflow: hidden; border-radius: 18px; background-image: url(https://placehold.co/150x40)">
+                                <div style="width: 152px; height: 154px; left: -2px; top: -110px; position: absolute">
+                                </div>
+                                <img style="width: 194.26px; height: 317px; left: -45px; top: -150px; position: absolute"
+                                    src="images/p2.png" />
+                            </div>
+                            <div
+                                style="width: 427px; color: white; font-size: 34px; font-family: Inter; font-weight: 600; line-height: 40px; word-wrap: break-word">
+                                Identity Alchemy</div>
+                        </div>
+                        <div style="width: 40px; height: 40px; position: relative"></div>
+                    </div>
+                    <div
+                        style="align-self: stretch; padding-top: 32px; padding-bottom: 32px; border-bottom: 1px #282828 solid; justify-content: space-between; align-items: center; display: inline-flex">
+                        <div style="justify-content: flex-start; align-items: center; gap: 32px; display: flex">
+                            <div
+                                style="width: 150px; height: 40px; position: relative; overflow: hidden; border-radius: 18px; background-image: url(https://placehold.co/150x40)">
+
+                                <img style="width: 149.67px; height: 267px; left: 2px; top: -27px; position: absolute"
+                                    src="images/p3.png" />
+                            </div>
+                            <div
+                                style="color: white; font-size: 34px; font-family: Inter; font-weight: 600; line-height: 40px; word-wrap: break-word">
+                                Generative Design</div>
+                        </div>
+                        <div style="width: 40px; height: 40px; position: relative"></div>
+                    </div>
+                    <div
+                        style="align-self: stretch; padding-top: 32px; padding-bottom: 32px; border-bottom: 1px #282828 solid; justify-content: space-between; align-items: center; display: inline-flex">
+                        <div style="justify-content: flex-start; align-items: center; gap: 32px; display: flex">
+                            <div
+                                style="width: 150px; height: 40px; position: relative; overflow: hidden; border-radius: 18px; background-image: url(https://placehold.co/150x40)">
+                                <img style="width: 151px; height: 230px; left: -1px; top: -92px; position: absolute"
+                                    src="images/p4.png" />
+                            </div>
+                            <div
+                                style="color: white; font-size: 34px; font-family: Inter; font-weight: 600; line-height: 40px; word-wrap: break-word">
+                                Creative Research</div>
+                        </div>
+                        <div style="width: 40px; height: 40px; position: relative"></div>
+                    </div>
+                </div>
+            </div>
+            <div
+                style="align-self: stretch; padding-top: 80px; padding-bottom: 80px; background: black; flex-direction: column; justify-content: flex-start; align-items: center; gap: 32px; display: flex">
+                <div style="align-self: stretch; height: 978px; position: relative; background: black">
+                    <div
+                        style="width: 1280px; height: 878px; left: 80px; top: 80px; position: absolute; overflow: hidden">
+                        <div
+                            style="width: 1280px; padding-top: 24px; padding-bottom: 24px; left: 0px; top: 0px; position: absolute; background: black; flex-direction: column; justify-content: flex-start; align-items: center; gap: 8px; display: inline-flex">
+                            <div
+                                style="width: 1280px; justify-content: flex-start; align-items: center; display: inline-flex">
+                                <div
+                                    style="flex: 1 1 0; overflow: hidden; justify-content: flex-start; align-items: center; gap: 8px; display: flex">
+
+                                    <div
+                                        style="color: white; font-size: 22px; font-family: Inter; font-weight: 600; line-height: 38px; word-wrap: break-word">
+                                        Our Team</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            style="width: 100%; background: black; padding: 80px 0; display: flex; justify-content: center;">
+                            <div
+                                style="width: 1280px; display: flex; gap: 32px; flex-wrap: wrap; justify-content: center;">
+                                <!-- Niranjan -->
+                                <div
+                                    style="width: 395px; background: black; border-radius: 24px; outline: 2px #282828 solid; overflow: hidden;">
+                                    <div
+                                        style="background: rgba(240, 192, 67, 0.33); height: 395px; position: relative;">
+                                        <img src="images/niru.jpeg" alt="Niranjan Orkat"
+                                            style="width: 395px; height: 395px; object-fit: cover; position: absolute; top: 0; left: 0;" />
+                                    </div>
+                                    <div style="padding: 24px;">
+                                        <div style="color: white; font-size: 24px; font-weight: 600;">Niranjan Orkat
+                                        </div>
+                                        <div
+                                            style="color: #9D9FA1; font-size: 16px; line-height: 26px; margin-top: 8px;">
+                                            A Generalist Engineer with 5 years of industry experience spanning Robotics,
+                                            Artificial Intelligence, Architecture, and Computational Art. He writes
+                                            academic philosophy, focusing on Philosophy of Language, Psychoanalysis, and
+                                            Aesthetics. Niranjan is interested in doing work—capital N New—work that
+                                            resists assimilation into its field, invariant of the domain.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Harleen -->
+                                <div
+                                    style="width: 395px; background: black; border-radius: 24px; outline: 2px #282828 solid; overflow: hidden;">
+                                    <div
+                                        style="background: rgba(240, 192, 67, 0.33); height: 395px; position: relative;">
+                                        <img src="https://placehold.co/395x395" alt="Harleen Dhunda"
+                                            style="width: 395px; height: 395px; object-fit: cover; position: absolute; top: 0; left: 0;" />
+                                    </div>
+                                    <div style="padding: 24px;">
+                                        <div style="color: white; font-size: 24px; font-weight: 600;">Harleen Dhunda
+                                        </div>
+                                        <div
+                                            style="color: #9D9FA1; font-size: 16px; line-height: 26px; margin-top: 8px;">
+                                            A graduate in Psychology & English Literature from Kristu Jayanti College,
+                                            Harleen is a UX designer and researcher who crafts digital experiences. She
+                                            has worked across Ed-tech, health, and game design. Drawn to where art meets
+                                            social impact, Harleen weaves research and emotion into her work. Also a
+                                            musician, writer, and speaker, she believes in moving fluidly between ideas
+                                            and expression.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- George -->
+                                <div
+                                    style="width: 395px; background: black; border-radius: 24px; outline: 2px #282828 solid; overflow: hidden;">
+                                    <div
+                                        style="background: rgba(240, 192, 67, 0.33); height: 395px; position: relative;">
+                                        <img src="https://placehold.co/395x395" alt="George Panicker"
+                                            style="width: 395px; height: 395px; object-fit: cover; position: absolute; top: 0; left: 0;" />
+                                    </div>
+                                    <div style="padding: 24px;">
+                                        <div style="color: white; font-size: 24px; font-weight: 600;">George Panicker
+                                        </div>
+                                        <div
+                                            style="color: #9D9FA1; font-size: 16px; line-height: 26px; margin-top: 8px;">
+                                            A Bangalore-based practitioner working across new media art, creative tech,
+                                            computational design, and Earth system science. Engaging with immersive,
+                                            synthetic, computational, and moist media, George’s practice seeks to be a
+                                            virtual grounding for futures that include both human and nonhuman life.
+                                            Currently an artist/researcher in residence at the Hertz Lab, ZKM Karlsruhe.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div id="contact"
+                style="width: 1440px; padding: 80px 0; background: black; display: flex; justify-content: center; align-items: center;">
+                <div
+                    style="width: 800px; border-radius: 32px; border: 2px solid #282828; padding: 48px; display: flex; flex-direction: column; align-items: center; gap: 24px; text-align: center;">
+
+                    <div
+                        style="color: white; font-size: 32px; font-family: Inter; font-weight: 600; line-height: 40px;">
+                        Contact us at
+                    </div>
+
+                    <a href="mailto:mossfade.work@gmail.com"
+                        style="color: #B4FF81; font-size: 24px; font-family: Inter; font-weight: 500; line-height: 32px; text-decoration: none;">
+                        mossfade.work@gmail.com
+                    </a>
+
+                    <div style="margin-top: 32px; color: #666; font-size: 14px; font-family: Inter; font-weight: 400;">
+                        © Moss Fade
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+body {
+    background: #000;
+    color: #ddd;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background: #111;
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav .logo {
+    font-weight: bold;
+    color: #bada55;
+    font-size: 1.5em;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1em;
+}
+
+nav a {
+    color: #ccc;
+    text-decoration: none;
+}
+
+header {
+    text-align: center;
+    padding: 2em;
+}

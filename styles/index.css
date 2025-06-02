@@ -1,0 +1,151 @@
+body {
+    margin: 0;
+    font-family: 'Inter';
+    background: white;
+    color: white;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 48px 80px;
+    background: black;
+}
+
+.logo img {
+    height: 112px;
+    border-right: 2px solid #0F0C00;
+    padding: 39px 80px;
+}
+
+.nav-links a,
+.actions a {
+    color: white;
+    font-weight: 600;
+    font-size: 20px;
+    text-decoration: none;
+    margin: 0 20px;
+}
+
+.hero {
+    padding: 40px 0;
+    background: black;
+    text-align: center;
+    font-size: 140px;
+    color: #B4FF81;
+    font-weight: 600;
+}
+
+.intro {
+    background: black;
+    text-align: center;
+    padding: 40px 80px;
+    font-size: 36px;
+    line-height: 1.4;
+    color: white;
+}
+
+.practices {
+    background: black;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.practices h2 {
+    font-size: 28px;
+    margin-bottom: 40px;
+}
+
+.practice-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    margin-bottom: 32px;
+    border-bottom: 1px solid #282828;
+    padding: 32px;
+}
+
+.practice-item h3 {
+    font-size: 34px;
+    font-weight: 600;
+}
+
+.team {
+    background: black;
+    padding: 80px;
+    text-align: center;
+}
+
+.team h2 {
+    font-size: 28px;
+    margin-bottom: 40px;
+}
+
+.team-members {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 32px;
+    flex-wrap: wrap;
+}
+
+.team-member {
+    background: #000;
+    border: 2px solid #282828;
+    border-radius: 24px;
+    padding: 24px;
+    width: 395px;
+    box-sizing: border-box;
+}
+
+.team-member img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+}
+
+.team-member h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 16px;
+}
+
+.team-member p {
+    font-size: 16px;
+    color: #9D9FA1;
+    line-height: 26px;
+    margin-top: 8px;
+}
+
+.footer {
+    background: black;
+    color: #BDBDBD;
+    padding: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer a {
+    color: #BDBDBD;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    margin-right: 20px;
+}
+
+.footer p {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.footer-contact {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 600;
+    margin: 20px 0;
+}
