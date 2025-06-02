@@ -4,7 +4,7 @@ let numTendrils = 60;
 let spacing = 14;
 
 function setup() {
-    let cnv = createCanvas(windowWidth, windowHeight);
+    let cnv = createCanvas(1200, 400);
     cnv.parent("mossfade-canvas");
     background(0);
     textFont('Courier New');
