@@ -4,8 +4,12 @@ let numTendrils = 60;
 let spacing = 14;
 
 function setup() {
-    let cnv = createCanvas(1200, 400);
+    const canvasParent = document.getElementById("mossfade-canvas");
+    const canvasWidth = canvasParent.offsetWidth;
+    const canvasHeight = canvasWidth / 3; // maintain 3:1 aspect ratio
+    let cnv = createCanvas(canvasWidth, canvasHeight);
     cnv.parent("mossfade-canvas");
+    windowResized(); // trigger initial sizing
     background(0);
     textFont('Courier New');
     textSize(14);
@@ -14,6 +18,13 @@ function setup() {
     for (let i = 0; i < numTendrils; i++) {
         tendrils.push(new Tendril(random(width), random(50)));
     }
+}
+
+function windowResized() {
+    const canvasParent = document.getElementById("mossfade-canvas");
+    const canvasWidth = canvasParent.offsetWidth;
+    const canvasHeight = canvasWidth / 3;
+    resizeCanvas(canvasWidth, canvasHeight);
 }
 
 function draw() {

@@ -28,10 +28,12 @@
             flex-direction: column;
             align-items: center;
             background: black;
+            padding: 0 16px;
         }
 
         .navbar {
-            width: 1280px;
+            width: 100%;
+            max-width: 1280px;
             height: 112px;
             overflow: hidden;
             border-radius: 24px;
@@ -41,32 +43,31 @@
             align-items: center;
             background: black;
             margin-top: 48px;
+            padding: 0 16px;
         }
 
         .navbar .title {
-            width: 224px;
             height: 112px;
-            padding: 0 80px;
+            padding-right: 40px;
             border-right: 2px #0F0C00 solid;
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
-
         .navbar .nav-buttons {
             flex: 1;
             display: flex;
             justify-content: flex-end;
-            padding-right: 80px;
-            gap: 32px;
+            padding-left: 40px;
+            gap: 24px;
         }
 
         .navbar a {
             background: none;
             border: none;
             color: white;
-            font-size: 20px;
+            font-size: 18px;
             font-family: Inter;
             font-weight: 600;
             cursor: pointer;
@@ -84,13 +85,14 @@
         }
 
         .header h1 {
-            font-size: 140px;
+            font-size: clamp(48px, 10vw, 140px);
             font-weight: 600;
-            line-height: 144px;
+            line-height: 1.1;
             background: linear-gradient(90deg, #B4FF81, #ffffff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             color: white;
+            white-space: nowrap;
         }
 
         .subheader {
@@ -111,7 +113,7 @@
         }
 
         .team-member {
-            width: 90%;
+            width: 100%;
             background: black;
             border-radius: 24px;
             outline: 2px #282828 solid;
@@ -119,10 +121,12 @@
             display: flex;
             gap: 48px;
             padding: 40px;
+            flex-wrap: wrap;
         }
 
         .team-member img {
-            width: 50%;
+            width: 100%;
+            max-width: 500px;
             height: auto;
             border-radius: 16px;
             object-fit: cover;
@@ -134,16 +138,17 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+            min-width: 280px;
         }
 
         .team-member-info h2 {
-            font-size: 32px;
+            font-size: 28px;
             font-weight: 600;
         }
 
         .team-member-info p {
             color: #9D9FA1;
-            font-size: 18px;
+            font-size: 16px;
             line-height: 28px;
             margin-top: 12px;
         }
@@ -151,7 +156,8 @@
         .team-member-info .links {
             margin-top: 16px;
             display: flex;
-            gap: 16px;
+            flex-wrap: wrap;
+            gap: 12px;
         }
 
         .team-member-info .links a {
@@ -172,7 +178,7 @@
 
         .footer {
             width: 100%;
-            padding: 80px 0;
+            padding: 80px 16px;
             background: black;
             display: flex;
             justify-content: center;
@@ -180,7 +186,8 @@
         }
 
         .footer-content {
-            width: 800px;
+            width: 100%;
+            max-width: 800px;
             border-radius: 32px;
             border: 2px solid #282828;
             padding: 48px;
@@ -204,6 +211,33 @@
             font-size: 14px;
             font-weight: 400;
         }
+
+        @media screen and (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                height: auto;
+                padding: 16px;
+                gap: 16px;
+            }
+
+            .navbar .nav-buttons {
+                justify-content: center;
+                padding: 0;
+            }
+
+            .subheader {
+                font-size: 28px;
+            }
+
+            .team-member {
+                flex-direction: column;
+                padding: 24px;
+            }
+
+            .team-member img {
+                max-width: 100%;
+            }
+        }
     </style>
 </head>
 
@@ -218,7 +252,6 @@
                 <a href="#contact">Contact</a>
             </div>
         </div>
-
 
         <div class="header">
             <div class="subheader">Team </div>
