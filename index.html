@@ -77,7 +77,6 @@
 
         .title {
             text-align: center;
-            color: #B4FF81;
             font-size: clamp(48px, 10vw, 140px);
             font-weight: 600;
             line-height: 1.1;
@@ -85,7 +84,14 @@
             overflow-wrap: normal;
             word-break: keep-all;
             margin-bottom: 40px;
+
+            background: linear-gradient(90deg, #B4FF81, #b0c26a, #a2a762, #8a8a5a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
         }
+
 
         #mossfade-canvas {
             width: 100%;
@@ -217,6 +223,8 @@
             font-size: 24px;
             font-weight: 500;
             text-decoration: none;
+            word-break: break-all;
+            /* Add this line */
         }
 
         .contact-box .footer {
@@ -241,6 +249,21 @@
 
             .practice-title {
                 font-size: 22px;
+            }
+
+            .contact-box {
+                padding: 24px;
+                /* Reduced padding */
+            }
+
+            .contact-box a {
+                font-size: 18px;
+                /* Smaller font size for email */
+            }
+
+            .contact-box .heading {
+                font-size: 24px;
+                /* Smaller heading */
             }
         }
     </style>
@@ -269,22 +292,7 @@
 
         <!-- Script -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
-        <script>
-            function setup() {
-                const parent = document.getElementById("mossfade-canvas");
-                const w = parent.offsetWidth;
-                const h = w / 3;
-                let cnv = createCanvas(w, h);
-                cnv.parent("mossfade-canvas");
-            }
 
-            function windowResized() {
-                const parent = document.getElementById("mossfade-canvas");
-                const w = parent.offsetWidth;
-                const h = w / 3;
-                resizeCanvas(w, h);
-            }
-        </script>
         <script src="mold-sketch.js"></script>
 
         <!-- Intro -->

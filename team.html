@@ -31,57 +31,60 @@
             padding: 0 16px;
         }
 
-        .navbar {
+        .responsive-wrapper {
             width: 100%;
             max-width: 1280px;
-            height: 112px;
-            overflow: hidden;
-            border-radius: 24px;
-            outline: 2px #282828 solid;
-            outline-offset: -2px;
+            margin: 0 auto;
+        }
+
+        .nav-bar {
+            width: 100%;
+            padding: 48px 0;
             display: flex;
+            justify-content: space-between;
             align-items: center;
             background: black;
-            margin-top: 48px;
-            padding: 0 16px;
         }
 
-        .navbar .title {
-            height: 112px;
-            padding-right: 40px;
-            border-right: 2px #0F0C00 solid;
+        .nav-logo {
+            padding: 0 40px;
             display: flex;
             align-items: center;
-            justify-content: center;
+            border-right: 2px #0F0C00 solid;
         }
 
-        .navbar .nav-buttons {
-            flex: 1;
+        .nav-links {
             display: flex;
-            justify-content: flex-end;
-            padding-left: 40px;
-            gap: 24px;
+            gap: 32px;
+            padding-right: 40px;
         }
 
-        .navbar a {
+        .nav-links a {
             background: none;
             border: none;
             color: white;
             font-size: 18px;
-            font-family: Inter;
             font-weight: 600;
             cursor: pointer;
             text-decoration: none;
         }
 
+
         .header {
-            width: 100%;
-            padding: 80px 0 40px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 16px;
-            background: black;
+            text-align: center;
+            font-size: clamp(48px, 10vw, 140px);
+            font-weight: 600;
+            line-height: 1.1;
+            white-space: nowrap;
+            overflow-wrap: normal;
+            word-break: keep-all;
+            margin-bottom: 40px;
+
+            background: linear-gradient(90deg, #B4FF81, #b0c26a, #a2a762, #8a8a5a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
         }
 
         .header h1 {
@@ -176,16 +179,15 @@
             color: black;
         }
 
-        .footer {
+        #contact {
             width: 100%;
             padding: 80px 16px;
             background: black;
             display: flex;
             justify-content: center;
-            align-items: center;
         }
 
-        .footer-content {
+        .contact-box {
             width: 100%;
             max-width: 800px;
             border-radius: 32px;
@@ -198,14 +200,22 @@
             text-align: center;
         }
 
-        .footer-content a {
+        .contact-box .heading {
+            color: white;
+            font-size: 32px;
+            font-weight: 600;
+        }
+
+        .contact-box a {
             color: #B4FF81;
             font-size: 24px;
             font-weight: 500;
             text-decoration: none;
+            word-break: break-all;
+            /* Add this line */
         }
 
-        .footer-content .copyright {
+        .contact-box .footer {
             margin-top: 32px;
             color: #666;
             font-size: 14px;
@@ -237,24 +247,39 @@
             .team-member img {
                 max-width: 100%;
             }
+
+            .contact-box {
+                padding: 24px;
+                /* Reduced padding */
+            }
+
+            .contact-box a {
+                font-size: 18px;
+                /* Smaller font size for email */
+            }
+
+            .contact-box .heading {
+                font-size: 24px;
+                /* Smaller heading */
+            }
         }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <div class="navbar">
-            <div class="title">
-                <img src="images/logo.png" alt="Mossfade Logo" style="height: 64px; object-fit: contain;" />
+        <div class="responsive-wrapper nav-bar">
+            <div class="nav-logo">
+                <img src="images/logo.png" style="height: 42px;" />
             </div>
-            <div class="nav-buttons">
+            <div class="nav-links">
                 <a href="index.html">Home</a>
                 <a href="#contact">Contact</a>
             </div>
         </div>
 
         <div class="header">
-            <div class="subheader">Team </div>
+            <div class="subheader">TEAM </div>
         </div>
 
         <div class="team-section">
@@ -297,11 +322,12 @@
             </div>
         </div>
 
-        <div class="footer" id="contact">
-            <div class="footer-content">
-                <div style="color: white; font-size: 32px; font-weight: 600;">Contact us at</div>
+        <!-- Contact -->
+        <div id="contact">
+            <div class="contact-box">
+                <div class="heading">Contact us at</div>
                 <a href="mailto:mossfade.work@gmail.com">mossfade.work@gmail.com</a>
-                <div class="copyright">© Moss Fade</div>
+                <div class="footer">© Moss Fade</div>
             </div>
         </div>
     </div>
