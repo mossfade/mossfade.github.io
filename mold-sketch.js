@@ -1,98 +1,62 @@
-let molds = [];
-let num = 4000;
-let d;
-let globalHue = 0;
+let tendrils = [];
+let codeChars = '01{}[]()<>+-*/=.,:;|&^%!$#@ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+let numTendrils = 60;
+let spacing = 14;
 
 function setup() {
-    let cnv = createCanvas(1200, 400);
+    let cnv = createCanvas(windowWidth, windowHeight);
     cnv.parent("mossfade-canvas");
-    angleMode(DEGREES);
-    colorMode(HSB, 360, 255, 255, 255);
     background(0);
-    d = pixelDensity();
+    textFont('Courier New');
+    textSize(14);
+    colorMode(HSB, 360, 255, 255, 255);
 
-    for (let i = 0; i < num; i++) {
-        molds[i] = new Mold();
+    for (let i = 0; i < numTendrils; i++) {
+        tendrils.push(new Tendril(random(width), random(50)));
     }
 }
 
 function draw() {
-    noStroke();
-    fill(0, 0, 0, 90);
+    fill(0, 0, 0, 20);
     rect(0, 0, width, height);
 
-    loadPixels();
-
-    for (let i = 0; i < num; i++) {
-        if (key === "s") {
-            molds[i].stop = true;
-            updatePixels();
-            noLoop();
-        } else {
-            molds[i].stop = false;
-        }
-
-        molds[i].update();
-        molds[i].display();
+    for (let t of tendrils) {
+        t.update();
+        t.display();
     }
-
-    updatePixels();
-    globalHue = (globalHue + 0.1) % 360;
 }
 
-class Mold {
-    constructor() {
-        this.reset();
-    }
-
-    reset() {
-        this.x = random(width);
-        this.y = random(height);
-        this.angle = random(360);
-        this.hue = random(360);
-        this.alpha = 255;
-        this.stop = false;
-        this.life = floor(random(500, 100));
+class Tendril {
+    constructor(x, offset) {
+        this.x = x;
+        this.offset = offset;
+        this.length = floor(random(10, 25));
+        this.chars = Array(this.length).fill().map(() => random(codeChars));
+        this.yOffsets = Array(this.length).fill().map((_, i) => -i * spacing);
+        this.hue = random(180, 300);
+        this.speed = random(0.5, 1.2);
+        this.time = random(1000);
     }
 
     update() {
-        if (this.stop) return;
+        this.time += 0.01;
+        this.x += sin(this.time + this.offset) * 0.5;
 
-        this.life--;
-        if (this.life <= 0) {
-            if (random() < 0.01) {
-                this.reset();
-            } else {
-                return;
+        for (let i = 0; i < this.yOffsets.length; i++) {
+            this.yOffsets[i] += this.speed;
+
+            if (this.yOffsets[i] > height + spacing) {
+                this.yOffsets[i] = random(-400, -50);
+                this.chars[i] = random(codeChars);
             }
         }
-
-        if (random() < 0.002) {
-            this.angle += random(-180, 180);
-        }
-
-        this.x += cos(this.angle) * 1.5;
-        this.y += sin(this.angle) * 1.5;
-
-        if (this.x < 0) this.x += width;
-        if (this.y < 0) this.y += height;
-        if (this.x >= width) this.x -= width;
-        if (this.y >= height) this.y -= height;
-
-        this.angle += random(-5, 5);
     }
 
     display() {
-        let ix = floor(this.x);
-        let iy = floor(this.y);
-        let idx = 4 * ((iy * width + ix) * d);
-
-        let r = globalHue % 360;
-        let c = color(r, 200, 255, 100);
-
-        pixels[idx + 0] = red(c);
-        pixels[idx + 1] = green(c);
-        pixels[idx + 2] = blue(c);
-        pixels[idx + 3] = 255;
+        for (let i = 0; i < this.length; i++) {
+            let alpha = map(i, 0, this.length, 255, 50);
+            fill((this.hue + i * 4) % 360, 180, 255, alpha);
+            text(this.chars[i], this.x, this.yOffsets[i]);
+        }
     }
 }
