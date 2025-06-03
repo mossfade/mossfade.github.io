@@ -265,6 +265,22 @@
         }
     </style>
 </head>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const section = document.querySelector(".team-section");
+        const members = Array.from(section.querySelectorAll(".team-member"));
+
+        // Fisher-Yates Shuffle
+        for (let i = members.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [members[i], members[j]] = [members[j], members[i]];
+        }
+
+        // Clear and re-add in new order
+        section.innerHTML = '';
+        members.forEach(member => section.appendChild(member));
+    });
+</script>
 
 <body>
     <div class="container">
@@ -299,7 +315,7 @@
             </div>
 
             <div class="team-member">
-                <img src="https://placehold.co/900x600" alt="Harleen Dhunda">
+                <img src="images/harleen.png" alt="Harleen Dhunda">
                 <div class="team-member-info">
                     <h2>Harleen Dhunda</h2>
                     <p>A graduate in Psychology & English Literature from Kristu Jayanti College, Harleen is a UX
@@ -311,14 +327,18 @@
             </div>
 
             <div class="team-member">
-                <img src="https://placehold.co/900x600" alt="George Panicker">
+                <img src="images/george.jpeg" alt="George Panicker">
                 <div class="team-member-info">
                     <h2>George Panicker</h2>
                     <p>A Bangalore-based practitioner working across new media art, creative tech, computational design,
                         and Earth system science. Engaging with immersive, synthetic, computational, and moist media,
                         George’s practice seeks to be a virtual grounding for futures that include both human and
                         nonhuman life. Currently an artist/researcher in residence at the Hertz Lab, ZKM Karlsruhe.</p>
+                    <div class="links">
+                        <a href="https://georgepanicker.netlify.app/" target="_blank">Portfolio</a>
+                    </div>
                 </div>
+
             </div>
         </div>
 
